@@ -57,7 +57,7 @@ class InputValidator extends StringValidator
 
         // iterate through all fields of current form
         foreach ($mail->getForm()->getPages() as $page) {
-            foreach ($page->getFields() as $field) {
+            foreach ($page->getFields()->toArray() as $field) {
                 $answer = $this->getAnswerFromField($field, $mail);
                 $this->isValidFieldInMandatoryValidation($field, $answer);
                 $this->isValidFieldInStringValidation($field, $answer);
