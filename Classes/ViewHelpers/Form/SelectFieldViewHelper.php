@@ -108,7 +108,7 @@ class SelectFieldViewHelper extends SelectViewHelper
      */
     protected function isSelectedAlternativeForString(array $option): bool
     {
-        if (($option['selected'] && !$this->getValueAttribute()) ||
+        if ((isset($option['selected']) && $option['selected'] && !$this->getValueAttribute()) ||
             ($this->getValueAttribute() &&
                 ($option['value'] === $this->getValueAttribute() || $option['label'] === $this->getValueAttribute()))
         ) {
